@@ -55,13 +55,18 @@ https://raw.githubusercontent.com/nuxt/starter/templates/templates/v3.json
 </template>
 ~~~
 
+### 默认提供assets和components文件夹
+
+assets文件夹用于存放图片，字体等静态资源
+components文件夹用于存放普通Vue组件(非路由组件)
+
 
 
 ### nuxt配置，这里展示完整的nuxt配置
 
 ~~~js
+// Nuxt配置
 export default defineNuxtConfig({
-    // 模板默认在安装依赖和运行的时候，总会提示Are you interested in participating? 非常烦人！！
     // 关闭Are you interested in participating的提示
     telemetry: false,
     // 设置默认开发服务的端口
@@ -71,15 +76,19 @@ export default defineNuxtConfig({
     },
     // 是否开启服务端渲染
     ssr: false,
-    // 设置全局头部
-    head: {
-        meta: [
-            { charset: "utf-8" },
-            { name: "viewport", content: "width-device-width，initial-scale=1"},
-        ],
-        link: [
-            { rel: 'icon', type: "image/x-icon", href: "/favicon.ico"}
-        ]
+    // 设置全局SEO(head头部的相关内容)
+    app: {
+        head: {
+            title: "FreeChat",
+            viewport: "width-device-width，initial-scale=1",
+            charset: "utf-8",
+            meta: [
+                { name: "description", content: "白嫖ChatGPT" }
+            ],
+            link: [
+                { rel: 'icon', type: "image/x-icon", href: "/favicon.ico"}
+            ],
+        }
     }
 })
 
