@@ -79,11 +79,11 @@ export default defineNuxtConfig({
     // 设置全局SEO(head头部的相关内容)
     app: {
         head: {
-            title: "FreeChat",
+            title: "Nuxt 3 App",
             viewport: "width-device-width，initial-scale=1",
             charset: "utf-8",
             meta: [
-                { name: "description", content: "白嫖ChatGPT" }
+                { name: "description", content: "A Nuxt 3 template" }
             ],
             link: [
                 { rel: 'icon', type: "image/x-icon", href: "/favicon.ico"}
@@ -91,6 +91,7 @@ export default defineNuxtConfig({
         }
     }
 })
+
 
 ~~~
 
