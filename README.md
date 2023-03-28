@@ -31,19 +31,59 @@ https://raw.githubusercontent.com/nuxt/starter/templates/templates/v3.json
 就可以下载模板
 
 ## 个性化模板配置
-模板默认在安装依赖和运行的时候，总会提示
-~~~
-Are you interested in participating?
+
+**2023.3.28 更新**
+
+### app.vue默认使用路由入口
+
+~~~html
+<template>
+  <div>
+    <!-- 路由入口 -->
+    <NuxtPage />
+  </div>
+</template>
+
 ~~~
 
-很烦人，所以通过在nuxt.config.ts中配置
-~~~typescript
-export default defineNuxtConfig({
-    // 关闭Are you interested in participating的提示
-    telemetry: false
-})
+### 默认提供pages文件夹，里面写好了index.vue(路由根路径)
+
+~~~html
+<template>
+    <!-- Nuxt 3默认欢迎页 -->
+    <NuxtWelcome/>
+</template>
 ~~~
-即可.
+
+
+
+### nuxt配置，这里展示完整的nuxt配置
+
+~~~js
+export default defineNuxtConfig({
+    // 模板默认在安装依赖和运行的时候，总会提示Are you interested in participating? 非常烦人！！
+    // 关闭Are you interested in participating的提示
+    telemetry: false,
+    // 设置默认开发服务的端口
+    devServer: {
+        host: "0.0.0.0",
+        port: 8080
+    },
+    // 是否开启服务端渲染
+    ssr: false,
+    // 设置全局头部
+    head: {
+        meta: [
+            { charset: "utf-8" },
+            { name: "viewport", content: "width-device-width，initial-scale=1"},
+        ],
+        link: [
+            { rel: 'icon', type: "image/x-icon", href: "/favicon.ico"}
+        ]
+    }
+})
+
+~~~
 
 同时，我喜欢用serve作为开发模式的运行命令，所以修改`package.json`
 ~~~json
