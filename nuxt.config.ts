@@ -11,9 +11,13 @@ export default defineNuxtConfig({
     ssr: false,
     // 设置全局SEO(head头部的相关内容)
     app: {
+        // 设置<html lang="zh-CN">
+        htmlAttrs: {
+            lang: "zh-CN"
+        },
         head: {
             title: "Nuxt 3 App",
-            viewport: "width-device-width，initial-scale=1",
+            viewport: "width-device-width, initial-scale=1",
             charset: "utf-8",
             meta: [
                 { name: "description", content: "A Nuxt 3 template" }
