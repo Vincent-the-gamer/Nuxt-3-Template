@@ -8,7 +8,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@types/node": "^18.15.11",
-    "nuxt": "^3.2.3"
+    "@types/node": "^20.1.2",
+    "nuxt": "^3.4.3"
   }
 }
